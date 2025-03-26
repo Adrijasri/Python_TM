@@ -257,3 +257,172 @@ list2 = [2, 4, 6, 8]
 print(merge_sorted_lists(list1, list2))
 ```
 
+CODES
+
+```python
+def validate_pipelines(pipelines, threshold):
+    longest_pipeline = max(pipelines, key=lambda x: x[1])[0]
+    exceeding_pipelines = [name for name, time in pipelines if time > threshold]
+    return f"Longest Pipeline: {longest_pipeline}\nPipelines exceeding threshold: {exceeding_pipelines}"
+
+pipelines = [("Data Ingestion", 30), ("Preprocessing", 45), ("Model Training", 120), ("Evaluation", 20)]
+threshold = 40
+print(validate_pipelines(pipelines, threshold))
+```
+
+
+```python
+def parse_config(config):
+    return [tuple(item.split("=")) for item in config.split(";")]
+
+config = "host=127.0.0.1;port=8080;mode=debug"
+print(parse_config(config))
+```
+
+```python
+def extract_hashtags(post):
+    return list(set([word for word in post.split() if word.startswith("#")]))
+
+post = "Loving the new #Python course! #Coding #Python #Learning"
+print(extract_hashtags(post))
+```
+
+```python
+def decode_message(secret_message):
+    return secret_message[::2]
+
+secret_message = "hweollrolwd"
+print(decode_message(secret_message))
+```
+
+```python
+def highest_quantity_product(inventory):
+    return max(inventory, key=lambda x: x[1])[0]
+
+inventory = [("Apples", 50), ("Oranges", 75), ("Bananas", 30)]
+print(highest_quantity_product(inventory))
+```
+
+```python
+def analyze_survey(survey_data):
+    scores = list(map(int, survey_data.split(",")))
+    return f"Max Score: {max(scores)}, Min Score: {min(scores)}"
+
+survey_data = "5,3,4,1,2"
+print(analyze_survey(survey_data))
+```
+
+```python
+def assign_roles(users, roles):
+    return [f"{users[i]}: {roles[i]}" for i in range(len(users))]
+
+users = ["Alice", "Bob", "Charlie"]
+roles = ("Admin", "Editor", "Viewer")
+print(assign_roles(users, roles))
+```
+```python
+def categorize_message(message):
+    length = len(message)
+    category = "Short" if length < 20 else "Medium" if length < 50 else "Long"
+    return f"Category: {category}"
+
+message = "My account is locked, please help!"
+print(categorize_message(message))
+```
+
+```python
+def longest_product_name(products):
+    return max(products, key=len)
+
+products = ["Laptop", "Smartphone", "Wireless Headphones"]
+print(longest_product_name(products))
+```
+
+```python
+def average_last_readings(sensor_readings):
+    last_10 = sensor_readings[-10:]
+    return f"Average: {sum(last_10) // len(last_10)}"
+
+sensor_readings = [12, 15, 14, 16, 20, 22, 21, 23, 25, 30, 28, 27]
+print(average_last_readings(sensor_readings))
+```
+
+```python
+def reverse_transactions(transactions):
+    return transactions[::-1]
+
+transactions = [100, -50, 200, -150, 50]
+print(reverse_transactions(transactions))
+```
+
+```python
+def format_logs(logs, timestamp):
+    return [f"{timestamp}: {log}" for log in logs]
+
+logs = ["System Boot", "Network Connected", "User Login"]
+timestamp = "2025-03-20"
+print(format_logs(logs, timestamp))
+```
+
+```python
+def generate_pattern(symbol, count):
+    return " ".join([symbol] * count)
+
+symbol = "*"
+count = 5
+print(generate_pattern(symbol, count))
+```
+
+```python
+def count_word_occurrences(feedback, word="excellent"):
+    return f"'{word}' count: {feedback.lower().split().count(word)}"
+
+feedback = "The product is excellent, absolutely excellent!"
+print(count_word_occurrences(feedback))
+```
+
+```python
+def find_error_index(log):
+    return f"Index: {log.lower().find('error')}"
+
+log = "INFO: All systems go. ERROR: Failed to start service."
+print(find_error_index(log))
+```
+
+```python
+def parse_csv(csv_data):
+    return [line.split(",") for line in csv_data.split("\n")]
+
+csv_data = "Alice,25,Engineer\nBob,30,Doctor\nCharlie,22,Artist"
+print(parse_csv(csv_data))
+```
+
+```python
+def generate_usernames(names):
+    return [f"{name.split()[0][0]}{name.split()[1]}" for name in names]
+
+names = ["Alice Wonderland", "Bob Builder", "Charlie Chaplin"]
+print(generate_usernames(names))
+```
+
+```python
+from collections import Counter
+
+def count_messages(chat_logs):
+    user_counts = Counter(log.split(":")[0] for log in chat_logs)
+    return [f"{user}: {count} messages" for user, count in user_counts.items()]
+
+chat_logs = ["Alice: Hi!", "Bob: Hello!", "Alice: How are you?", "Bob: I’m good, thanks!"]
+print(count_messages(chat_logs))
+```
+
+```python
+def compress(data):
+    for i in range(1, len(data) // 2 + 1):
+        if data == data[:i] * (len(data) // i):
+            return f"'{data[:i]}' repeated {len(data) // i} times"
+    return data
+
+data = "abababababab"
+print(compress(data))
+```
