@@ -235,10 +235,8 @@ print(my_list)  # [1, 2, 10]
 def welcome():
     print("Welcome to Python!")
 
-# Calling it three times
-welcome()
-welcome()
-welcome()
+for_ in range(3):
+     welcome()
 ```
 2. **Write a function `square(n)` that takes a number `n` and returns its square.**
 ```python
